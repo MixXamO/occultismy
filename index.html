@@ -847,13 +847,29 @@ document.querySelectorAll('a, button, .playlist-item').forEach(el => {
 // PLAYER
 // Плейлист — вставь свои треки (укажи URL к mp3 файлам или оставь демо)
 const tracks = [
-  { name: 'Shadow Protocol', artist: 'Unknown Artist', src: '', emoji: '◈', duration: '3:42' },
-  { name: 'Void Ritual', artist: 'Dark Ambient', src: '', emoji: '⌖', duration: '4:17' },
-  { name: 'Cursed Signal', artist: 'Cyber Gothic', src: '', emoji: '⛧', duration: '2:58' },
-  { name: 'Silent Omen', artist: 'Occult Wave', src: '', emoji: '☽', duration: '5:03' },
-  { name: 'Cathedral Echo', artist: 'Post Industrial', src: '', emoji: '†', duration: '3:29' },
+  { 
+    name: 'You Stupid Bitch', 
+    artist: 'girl in red', 
+    src: 'ysb.mp3', // Путь к твоему файлу
+    emoji: '⛧', 
+    duration: '3:17' 
+  },
+ { 
+    name: 'Болен', 
+    artist: 'Musvich', 
+    src: 'bolen.mp3', // Путь к твоему файлу
+    emoji: '◈', 
+    duration: '1:38' 
+  },
+  { 
+    name: 'Like In The War', 
+    artist: 'cutneckk', 
+    src: 'likewar.mp3', // Путь к твоему файлу
+    emoji: '⛧', 
+    duration: '2:41' 
+  },
+  // И так далее для остальных треков...
 ];
-
 let currentTrack = 0, isPlaying = false;
 const audio = document.getElementById('audioEl');
 const btnPlay = document.getElementById('btnPlay');
