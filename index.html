@@ -132,17 +132,40 @@
   }
 
   .name-main {
-    font-family: 'UnifrakturMaguntia', serif;
-    font-size: clamp(64px, 14vw, 110px);
-    color: var(--text);
-    text-shadow:
-      0 0 30px rgba(168,85,247,0.5),
-      0 0 80px rgba(107,33,168,0.3),
-      0 2px 0 rgba(0,0,0,0.8);
-    animation: fadeInDown 1s 0.2s ease both;
-    line-height: 1;
-    letter-spacing: -2px;
-  }
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: clamp(64px, 14vw, 110px);
+  /* Хромированный градиент вместо статичного цвета */
+  background: linear-gradient(
+    to bottom,
+    #e2d9f3 0%,   /* Светлый верх */
+    #a855f7 45%,  /* Фиолетовый акцент */
+    #3d3560 50%,  /* Темная "линия горизонта" */
+    #7c3aed 55%,  /* Насыщенный низ */
+    #0d0d1a 100%  /* Уход в тень */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.4));
+  line-height: 1;
+  letter-spacing: -2px;
+  animation: fadeInDown 1s 0.2s ease both;
+}
+
+/* Обновленный эффект глитча для "нефорского" вида */
+.glitch::before {
+  color: rgba(168, 85, 247, 0.4);
+  animation: glitchA 4s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  -webkit-text-fill-color: initial; /* Возвращаем цвет для слоя глитча */
+}
+
+.glitch::after {
+  color: rgba(124, 58, 237, 0.4);
+  animation: glitchB 4s infinite;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  -webkit-text-fill-color: initial;
+}
+
 
   .name-sub {
     font-family: 'Cinzel', serif;
